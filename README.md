@@ -4,6 +4,7 @@ A API foi criada visando atender ao nível de maturidade 2 de Richardson.
 
 ## Requisitos
 Para execução do projeto, é necessário instalação do JDK 8.
+O passo-a-passo abaixo foi feito com base no Eclipse.
 
 ## Configurações
 - Por padrão a aplicação está configurada com o servlet.contextPath=/api para alterá-lo abra o arquivo application.properties e altere o valor da propriedade.
@@ -31,12 +32,12 @@ Para executar o projeto, nenhuma instalação externa é necessária. Ao ser ini
 2. Se está usando uma ferramenta externa a IDE, importe o projeto como projeto Maven existente;
 3. Execute o comando Maven abaixo:
 ```sh
-        $ mvn install
+        $ mvn install -Dmaven.test.skip=true
 ```
 4. Para iniciar a aplicação clique no projeto com o botão direito do mouse, vá até a opção *Run As* e selecione Spring Boot App.
 
 ## EndPoints
 Para ver a lista de chamadas REST disponíveis, seus parametros, códigos de resposta HTTP, e tipo de retorno, inicie a aplicação e acesse: http://localhost:8080/api/swagger-ui.html#/
 
-## Bugs
-- Há um bug durante o mvn install que impede a execução de um dos testes. É possível executar este teste posteriormente executanto a suite de testes AppTeste.
+## Testes
+Para executar os testes abra a classe AppTest.java, clique em Run -> Run As -> JUnit Test. Isso fará com que todos os testes de integração implementados sejam executados.
