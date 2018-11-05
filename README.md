@@ -5,6 +5,26 @@ A API foi criada visando atender ao nível de maturidade 2 de Richardson.
 ## Requisitos
 Para execução do projeto, é necessário instalação do JDK 8.
 
+## Configurações
+- Por padrão a aplicação está configurada com o servlet.contextPath=/api para alterá-lo abra o arquivo application.properties e altere o valor da propriedade.
+```sh
+    # Context
+    server.servlet.contextPath=/api
+```
+- Para alterar as configurações do banco de dados com URL, usuário, senha e url do console, e ativar/desativar o console, abra o arquivo application.properties. A opções do banco H2 e as propriedades do datasource são exibidas como abaixo:
+```sh
+    # H2
+    spring.h2.console.enabled=true
+    spring.h2.console.path=/h2
+    
+    # Datasource
+    spring.datasource.url=jdbc:h2:mem:testdb
+    spring.datasource.username=sa
+    spring.datasource.password=
+    spring.datasource.driver-class-name=org.h2.Driver
+    spring.jpa.hibernate.ddl-auto=update
+```
+
 ## Para executar o projeto
 Para executar o projeto, nenhuma instalação externa é necessária. Ao ser iniciada, a aplicação cria o banco de dados e o popula com os dados do arquivo movielist.csv, que se encontra em *src/main/resources/*.
 1. Clone o repositório o faça download;
