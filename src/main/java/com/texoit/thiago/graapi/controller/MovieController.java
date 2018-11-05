@@ -1,9 +1,6 @@
 package com.texoit.thiago.graapi.controller;
 
-import java.security.InvalidParameterException;
 import java.util.List;
-
-import javax.validation.ValidationException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,16 +55,8 @@ public class MovieController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> removeMovie(@PathVariable(name="id") Long id) {
-		try {
-			movieService.remove(id);
-			return new ResponseEntity<Void>(HttpStatus.OK);
-		} catch (InvalidParameterException e) {
-			logger.info(e.getMessage());
-			return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
-		} catch (ValidationException e) {
-			logger.info(e.getMessage());
-			return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
-		}
+		movieService.remove(id);
+		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
 }

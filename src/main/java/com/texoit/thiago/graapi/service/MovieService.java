@@ -1,11 +1,8 @@
 package com.texoit.thiago.graapi.service;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import javax.validation.ValidationException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +13,8 @@ import com.texoit.thiago.graapi.dto.MovieDTO;
 import com.texoit.thiago.graapi.dto.YearWinnerDTO;
 import com.texoit.thiago.graapi.dto.YearWinnerMovieDTO;
 import com.texoit.thiago.graapi.entity.Movie;
+import com.texoit.thiago.graapi.exceptions.BadRequestException;
+import com.texoit.thiago.graapi.exceptions.ResourceNotFoundException;
 import com.texoit.thiago.graapi.repository.MovieRepository;
 
 @Service
@@ -57,12 +56,12 @@ public class MovieService {
 		Optional<Movie> optional = movieRepository.findById(id);
 		
 		if ( !optional.isPresent() ) {
-			throw new InvalidParameterException("Movie not found.");
+			throw new ResourceNotFoundException();
 		}
 		
 		Movie movie = optional.get();
 		if ( movie.getWinner() ) {
-			throw new ValidationException("Movie can't be removed.");
+			throw new BadRequestException();
 		}
 		
 		movieRepository.delete(movie);
