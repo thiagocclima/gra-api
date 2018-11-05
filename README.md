@@ -36,7 +36,7 @@ Para executar o projeto, nenhuma instalação externa é necessária. Ao ser ini
 4. Para iniciar a aplicação clique no projeto com o botão direito do mouse, vá até a opção *Run As* e selecione Spring Boot App.
 
 ## EndPoints
-Para ver a lista de chamadas REST disponíveis, seus parametros, response HttpStatus code, e tipo de retorno, inicie a aplicação e acesse: http://localhost:8080/api/swagger-ui.html#/
+Para ver a lista de chamadas REST disponíveis, seus parametros, códigos de resposta HTTP, e tipo de retorno, inicie a aplicação e acesse: http://localhost:8080/api/swagger-ui.html#/
 
 ## Bugs
 - Há um bug durante o mvn install que impede a execução de um dos testes. É possível executar este teste posteriormente executanto a suite de testes AppTeste.
