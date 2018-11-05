@@ -56,11 +56,11 @@ public class MovieControllerIntegrationTest {
             .andExpect( jsonPath("$.*.*.winnerCount", hasItem( is( 2 ))) );
     }
     
-//    @Test
-//    public void removeTest() throws Exception {
-//        mockMvc.perform( MockMvcRequestBuilders.delete("/movie/2").contentType(MediaType.APPLICATION_JSON))
-//            .andExpect( MockMvcResultMatchers.status().isOk() );
-//    }
+    @Test
+    public void removeTest() throws Exception {
+        mockMvc.perform( MockMvcRequestBuilders.delete("/movie/2").contentType(MediaType.APPLICATION_JSON))
+            .andExpect( MockMvcResultMatchers.status().isOk() );
+    }
     
     @Test
     public void removeBadRequestTest() throws Exception {
