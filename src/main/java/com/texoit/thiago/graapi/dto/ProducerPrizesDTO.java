@@ -10,6 +10,8 @@ public class ProducerPrizesDTO {
 	
 	private Integer followingWin;
 	
+	public ProducerPrizesDTO() {}
+	
 	public ProducerPrizesDTO(String producer, Integer interval, Integer previousWin, Integer followingWin) {
 		this.producer = producer;
 		this.interval = interval;

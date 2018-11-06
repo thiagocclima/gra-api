@@ -10,6 +10,8 @@ public class ProducerMinMaxPrizesDTO {
 	
 	private List<ProducerPrizesDTO> max = new ArrayList<>();
 	
+	public ProducerMinMaxPrizesDTO () {}
+	
 	public ProducerMinMaxPrizesDTO (LinkedList<ProducerPrizesDTO> lista) {
 		this.min.add(lista.getFirst());
 		this.max.add(lista.getLast());
@@ -29,6 +31,14 @@ public class ProducerMinMaxPrizesDTO {
 
 	public void setMax(List<ProducerPrizesDTO> max) {
 		this.max = max;
+	}
+	
+	public void addMin(ProducerPrizesDTO min) {
+		this.getMin().add(min);
+	}
+	
+	public void addMax(ProducerPrizesDTO max) {
+		this.getMax().add(max);
 	}
 
 }

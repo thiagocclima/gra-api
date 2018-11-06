@@ -15,5 +15,5 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
 	@Query(value="select new com.texoit.thiago.graapi.dto.YearWinnerMovieDTO(movie.year, count(movie.winner)) "
 			+ "from Movie as movie where movie.winner=true group by movie.year having count(movie.winner) > 1")
 	List<YearWinnerMovieDTO> findYearsWithModeThanOneWinner();
-
+	
 }
